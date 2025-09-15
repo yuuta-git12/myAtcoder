@@ -1,0 +1,44 @@
+# === Java / Maven ===
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# IDE / Editor
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+# VS Code
+.vscode/
+# Eclipse
+.project
+.classpath
+.settings/
+
+# OS / Misc
+.DS_Store
+Thumbs.db
+
+# Coverage / Reports
+/site/
+/coverage/
+/jacoco.exec
+
+# Temporary files
+*.swp
+*.swo
+*~
+
+# Local configs (do not commit machine-specific settings)
+*.local.*
+
+# AtCoder helpers
+# 入出力の一時ファイルなどを使う場合
+input.txt
+output.txt
