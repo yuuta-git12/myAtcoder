@@ -32,7 +32,7 @@ public class OddEvenCheckTest {
 
         String result = OddEvenCheck.processInput(scanner);
 
-        assertEquals("Odd", result);
+        assertEquals("Odd", result,"成功");
     }
 
     @Test
@@ -59,5 +59,18 @@ public class OddEvenCheckTest {
         String result = OddEvenCheck.processInput(scanner);
 
         assertEquals("Even", result);
+    }
+
+    @Test
+    @DisplayName("異常テスト")
+    public void failtest() {
+        String input = "a b";
+        // テストデータを入力ストリームに変換
+        InputStream inputStream = new ByteArrayInputStream(input.getBytes());
+        Scanner scanner = new Scanner(inputStream);
+
+        String result = OddEvenCheck.processInput(scanner);
+
+        assertEquals("数値型以外の値が入れられたので判定を中止します。", result, "期待値と結果が違います");
     }
 }

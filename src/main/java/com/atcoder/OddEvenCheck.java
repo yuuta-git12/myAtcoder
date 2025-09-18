@@ -11,23 +11,14 @@ public class OddEvenCheck {
     }
 
     public static String processInput(Scanner sc){
-        int num_product = 1;
-        String result = "";
+        boolean foundNonInteger = false;
+        boolean hasInt = false;
         while(sc.hasNext()){
-            if(sc.hasNextInt()){
-                int num = sc.nextInt();
-                num_product *= num;
-            }else{
-                continue;
-            }
+            if(!sc.hasNextInt()){foundNonInteger = true; break;}
+            int num = sc.nextInt();
+            if(num % 2 == 0) return "Even";
+            hasInt = true;
         }
-
-        if(num_product % 2 == 0){
-            result = "Even";
-        }else{
-            result = "Odd";
-        }
-        
-        return result;
+        return foundNonInteger ? "数値型以外の値が入れられたので判定を中止します。" : (hasInt ? "Odd": "Odd");
     }
 }
