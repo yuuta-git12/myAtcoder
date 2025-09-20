@@ -27,8 +27,6 @@ public class PlacingMarbles {
      * 
      * @param sc 入力スキャナー
      * @return 各桁に1が含まれている個数。入力が整数でない場合は-1を返します。
-     * 
-     * @example
      * 入力: 101 → 出力: 2 (1桁目と3桁目が1)
      * 入力: 111 → 出力: 3 (全ての桁が1)
      * 入力: 000 → 出力: 0 (0のみ)
@@ -36,13 +34,12 @@ public class PlacingMarbles {
     public static int processInput(Scanner sc){
         final int DECIMAL_RADIX = 10;   // 基数の定義
         int count_has_num = 0;
-        int num_mod = 0;    // 余り
 
         if(sc.hasNextInt()){
             int num = sc.nextInt();
 
             while(num != 0){
-                num_mod = num % DECIMAL_RADIX;
+                int num_mod = num % DECIMAL_RADIX;
                 num = num / DECIMAL_RADIX;
                 if(num_mod != 0){   // 余りがある場合はカウントアップ
                     count_has_num++;
